@@ -1,42 +1,139 @@
-#root {
-  max-width: 1280px;
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+  --secondary-orange: #EE9972;
+  --secondary-pink: #FBDABB;
+  --highlight-light: #EDEFEE;
+  --highlight-dark: #333333;
+  
+  /* Typography */
+  --heading-font: 'Markazi Text', serif;
+  --body-font: 'Karla', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 5rem 2rem;
+  --content-max-width: 1200px;
+  
+  /* Border Radius */
+  --border-radius: 16px;
+  --border-radius-small: 8px;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--highlight-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 1rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-yellow);
+  color: var(--highlight-dark);
+  border: none;
+  border-radius: var(--border-radius-small);
+  font-family: var(--body-font);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Add to existing App.css */
+
+.booking-section {
+  background-color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.confirmation-section {
+  background-color: var(--highlight-light);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:hover {
+  background-color: var(--secondary-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  :root {
+    --section-padding: 3rem 1.5rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  :root {
+    --section-padding: 2rem 1rem;
+  }
 }

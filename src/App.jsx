@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState } from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Specials from './components/Specials'
+import Testimonials from './components/Testimonials'
+import About from './components/About'
+import Booking from './components/Booking'
+import Footer from './components/Footer'
+import Confirmation from './components/Confirmation'
 import './App.css'
+import './booking.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [bookingConfirmed, setBookingConfirmed] = useState(false)
+  const [bookingData, setBookingData] = useState(null)
+
+  const handleBookingSubmit = (data) => {
+    setBookingData(data)
+    setBookingConfirmed(true)
+    
+    // Reset confirmation after 5 seconds
+    setTimeout(() => {
+      setBookingConfirmed(false)
+    }, 10000)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <Header />
+      <main>
+        <Hero />
+        {bookingConfirmed ? (
+          <Confirmation data={bookingData} />
+        ) : (
+          <Booking onSubmit={handleBookingSubmit} />
+        )}
+        <Specials />
+        <Testimonials />
+        <About />
+      </main>
+      <Footer />
+    </div>
   )
 }
 

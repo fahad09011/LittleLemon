@@ -1,0 +1,113 @@
+.specials {
+  background-color: var(--highlight-light);
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.special-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.special-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.special-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.special-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.special-content {
+  padding: 1.5rem;
+}
+
+.special-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.special-price {
+  color: var(--secondary-orange);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.special-description {
+  color: var(--highlight-dark);
+  margin-bottom: 1.5rem;
+  min-height: 100px;
+}
+
+.special-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special-order {
+  color: var(--highlight-dark);
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.special-order:hover {
+  color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .specials-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .specials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
