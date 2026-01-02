@@ -13,7 +13,8 @@ const Hero = () => {
             recipes served with a modern twist. Experience the taste of the Mediterranean 
             in the heart of Chicago.
           </p>
-          <a href="#reservations" className="btn hero-btn">Reserve a Table</a>
+          // Update the button in Hero.jsx to link to reservations
+<a href="#reservations" className="btn hero-btn">Reserve a Table</a>
         </div>
         <div className="hero-image">
           <img 
